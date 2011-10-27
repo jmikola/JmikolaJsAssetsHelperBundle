@@ -1,3 +1,5 @@
-AssetPackage.basePath = {{ basePath|json_encode|raw }};
-AssetPackage.defaultPackage = {{ defaultPackage|json_encode|raw }};
-AssetPackage.namedPackages = {{ namedPackages|json_encode|raw }};
+AssetHelper.init(
+    {{ basePath|json_encode|raw }},
+    {{ defaultPackage|json_encode|raw }},
+    {{ namedPackages|json_encode|raw }}
+);
