@@ -1,6 +1,6 @@
 var AssetHelper = AssetHelper || {};
 
-(function(AssetHelper, $) {
+(function(AssetHelper, $, $P) {
     /* Simple JavaScript Inheritance
      * By John Resig http://ejohn.org/
      * MIT Licensed.
@@ -91,7 +91,7 @@ var AssetHelper = AssetHelper || {};
                 return path;
             }
 
-            var versionized = sprintf(this.format, path.replace(/^\/+/, ''), this.version);
+            var versionized = $P.sprintf(this.format, path.replace(/^\/+/, ''), this.version);
 
             if (path && '/' === path.charAt(0)) {
                 versionized = '/' + versionized;
@@ -213,9 +213,9 @@ var AssetHelper = AssetHelper || {};
                case 0:
                    return '';
                case 1:
-               default:
-                   // TODO: Implement round-robin selection for multiple baseUrls
                    return this.baseUrls[0];
+               default:
+                   return this.baseUrls[parseInt($P.md5(path).substring(0, 10), 16) % this.baseUrls.length];
            }
        }
     });
@@ -302,4 +302,4 @@ var AssetHelper = AssetHelper || {};
            return this.getPackage(packageName).getVersion();
         }
     });
-}(AssetHelper, jQuery));
+}(AssetHelper, jQuery, new PHP_JS()));
