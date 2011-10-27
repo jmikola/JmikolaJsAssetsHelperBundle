@@ -24,7 +24,7 @@ class Controller
     {
         $this->engine = $engine;
         $this->defaultPackage = $defaultPackage;
-        $this->namedPackages = $namedPackage;
+        $this->namedPackages = $namedPackages;
     }
 
     public function indexAction(Request $request)
