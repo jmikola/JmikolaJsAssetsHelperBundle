@@ -20,9 +20,9 @@ class ExtractPackageDefinitionsPass implements CompilerPassInterface
             $packages[$name] = $this->extractDefinition($container, 'templating.asset.package.'.$name);
         }
 
-        $definition = $container->getDefinition('jmikola_js_asset_package.extractor');
-        $definition->replaceArgument(0, $this->extractDefinition($container, 'templating.asset.default_package'));
-        $definition->replaceArgument(1, $packages);
+        $definition = $container->getDefinition('jmikola_js_asset_package.controller');
+        $definition->replaceArgument(1, $this->extractDefinition($container, 'templating.asset.default_package'));
+        $definition->replaceArgument(2, $packages);
     }
 
     private function extractDefinition(ContainerBuilder $container, $name)
