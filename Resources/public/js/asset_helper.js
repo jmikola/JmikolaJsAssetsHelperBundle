@@ -78,7 +78,7 @@ var AssetHelper = AssetHelper || {};
          */
         init: function(version, format) {
             this.version = version;
-            this.format = format;
+            this.format = new String(format || '%s?%s');
         },
         /**
          * Applies version to the supplied path.
