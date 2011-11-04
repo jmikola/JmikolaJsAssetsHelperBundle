@@ -16,11 +16,11 @@ class ExtractPackageDefinitionsPass implements CompilerPassInterface
     {
         $packages = array();
 
-        foreach ($container->getParameter('jmikola_js_asset_package.packages_to_expose') as $name) {
+        foreach ($container->getParameter('jmikola_js_assets_helper.packages_to_expose') as $name) {
             $packages[$name] = $this->extractDefinition($container, 'templating.asset.package.'.$name);
         }
 
-        $definition = $container->getDefinition('jmikola_js_asset_package.controller');
+        $definition = $container->getDefinition('jmikola_js_assets_helper.controller');
         $definition->replaceArgument(1, $this->extractDefinition($container, 'templating.asset.default_package'));
         $definition->replaceArgument(2, $packages);
     }

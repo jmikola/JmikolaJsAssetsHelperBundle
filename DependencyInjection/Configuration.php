@@ -13,7 +13,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('jmikola_js_asset_package');
+        $rootNode = $treeBuilder->root('jmikola_js_assets_helper');
 
         $rootNode
             ->children()

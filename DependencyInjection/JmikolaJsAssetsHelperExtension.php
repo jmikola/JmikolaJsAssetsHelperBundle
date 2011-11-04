@@ -22,6 +22,6 @@ class JmikolaJsAssetsHelperExtension extends Extension
         $configuration = new Configuration();
         $config = $processor->processConfiguration($configuration, $configs);
 
-        $container->setParameter('jmikola_js_asset_package.packages_to_expose', $config['packages_to_expose']);
+        $container->setParameter('jmikola_js_assets_helper.packages_to_expose', $config['packages_to_expose']);
     }
 }
