@@ -102,7 +102,7 @@ $ php app/console assets:install --symlink web
 Include the static assets and dynamic JavaScript in your applications template:
 
 ```jinja
-<script src="{{ asset('bundles/jmikolajsassetpackage/js/phpjs.namespaced.js') }}"></script>
+<script src="{{ asset('bundles/jmikolajsassetpackage/js/phpjs.namespaced.min.js') }}"></script>
 <script src="{{ asset('bundles/jmikolajsassetpackage/js/asset_helper.js') }}"></script>
 <script src="{{ path('jmikola_js_asset_package_js') }}"></script>
 ```
@@ -111,7 +111,7 @@ If you are using [Assetic][], you may prefer to pack the static assets first:
 
 ```jinja
 {% javascripts
-    '@JmikolaJsAssetPackageBundle/Resources/public/js/phpjs.namespaced.js'
+    '@JmikolaJsAssetPackageBundle/Resources/public/js/phpjs.namespaced.min.js'
     '@JmikolaJsAssetPackageBundle/Resources/public/js/asset_helper.js'
     filter="?yui_js" output="js/jmikolajsassetpackage.min.js" %}
     <script src="{{ asset_url }}"></script>
