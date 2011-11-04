@@ -1,12 +1,12 @@
 <?php
 
-namespace Jmikola\JsAssetPackageBundle;
+namespace Jmikola\JsAssetsHelperBundle;
 
-use Jmikola\JsAssetPackageBundle\DependencyInjection\Compiler\ExtractPackageDefinitionsPass;
+use Jmikola\JsAssetsHelperBundle\DependencyInjection\Compiler\ExtractPackageDefinitionsPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class JmikolaJsAssetPackageBundle extends Bundle
+class JmikolaJsAssetsHelperBundle extends Bundle
 {
     /**
      * @see Symfony\Component\HttpKernel\Bundle\Bundle::build()

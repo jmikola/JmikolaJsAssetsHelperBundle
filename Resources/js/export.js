@@ -3,16 +3,16 @@
  *
  * You can compile this script by running (assuming you have JMSGoogleClosureBundle installed):
  *
- *    php app/console plovr:build @JmikolaJsAssetPackageBundle/compile.js
+ *    php app/console plovr:build @JmikolaJsAssetsHelperBundle/compile.js
  */
 
-goog.require('jmikola.AssetHelper');
+goog.require('jmikola.AssetsHelper');
 
-goog.exportSymbol('jmikola.AssetHelper', jmikola.AssetHelper);
-goog.exportProperty(jmikola.AssetHelper, 'getInstance', jmikola.AssetHelper.getInstance);
-goog.exportProperty(jmikola.AssetHelper.prototype, 'init', jmikola.AssetHelper.prototype.init);
-goog.exportProperty(jmikola.AssetHelper.prototype, 'getUrl', jmikola.AssetHelper.prototype.getUrl);
-goog.exportProperty(jmikola.AssetHelper.prototype, 'getVersion', jmikola.AssetHelper.prototype.getVersion);
-goog.exportProperty(jmikola.AssetHelper.prototype, 'getPackage', jmikola.AssetHelper.prototype.getPackage);
+goog.exportSymbol('jmikola.AssetsHelper', jmikola.AssetsHelper);
+goog.exportProperty(jmikola.AssetsHelper, 'getInstance', jmikola.AssetsHelper.getInstance);
+goog.exportProperty(jmikola.AssetsHelper.prototype, 'init', jmikola.AssetsHelper.prototype.init);
+goog.exportProperty(jmikola.AssetsHelper.prototype, 'getUrl', jmikola.AssetsHelper.prototype.getUrl);
+goog.exportProperty(jmikola.AssetsHelper.prototype, 'getVersion', jmikola.AssetsHelper.prototype.getVersion);
+goog.exportProperty(jmikola.AssetsHelper.prototype, 'getPackage', jmikola.AssetsHelper.prototype.getPackage);
 
-window['AssetHelper'] = jmikola.AssetHelper.getInstance();
+window['AssetsHelper'] = jmikola.AssetsHelper.getInstance();

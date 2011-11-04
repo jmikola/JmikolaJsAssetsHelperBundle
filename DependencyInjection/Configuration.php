@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmikola\JsAssetPackageBundle\DependencyInjection;
+namespace Jmikola\JsAssetsHelperBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;

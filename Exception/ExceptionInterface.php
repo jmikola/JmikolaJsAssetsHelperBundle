@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmikola\JsAssetPackageBundle\Exception;
+namespace Jmikola\JsAssetsHelperBundle\Exception;
 
 interface ExceptionInterface
 {

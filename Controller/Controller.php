@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmikola\JsAssetPackageBundle\Controller;
+namespace Jmikola\JsAssetsHelperBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -29,7 +29,7 @@ class Controller
 
     public function indexAction(Request $request)
     {
-        return $this->engine->renderResponse('JmikolaJsAssetPackageBundle::index.'.$request->getRequestFormat().'.twig', array(
+        return $this->engine->renderResponse('JmikolaJsAssetsHelperBundle::index.'.$request->getRequestFormat().'.twig', array(
             'basePath'       => $request->getBasePath(),
             'defaultPackage' => $this->defaultPackage,
             'namedPackages'  => $this->namedPackages,

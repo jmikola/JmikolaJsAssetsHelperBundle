@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmikola\JsAssetPackageBundle\DependencyInjection;
+namespace Jmikola\JsAssetsHelperBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Definition\Processor;
@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class JmikolaJsAssetPackageExtension extends Extension
+class JmikolaJsAssetsHelperExtension extends Extension
 {
     /**
      * @see Symfony\Component\DependencyInjection\Extension\ExtensionInterface::load()

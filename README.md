@@ -1,4 +1,4 @@
-# JmikolaJsAssetPackageBundle
+# JmikolaJsAssetsHelperBundle
 
 This bundle exposes the Symfony2 asset helper to JavaScript, which allows
 relative or absolute asset URI's to be generated client-side.
@@ -12,4 +12,4 @@ This bundle depends [PR #2502][], which is included in Symfony 2.0.5 and higher.
 This bundle's documentation lives in [Resources/doc/index.md][].
 
   [PR #2502]: https://github.com/symfony/symfony/pull/2502
-  [Resources/doc/index.md]: https://github.com/jmikola/JmikolaJsAssetPackageBundle/blob/master/Resources/doc/index.md
+  [Resources/doc/index.md]: https://github.com/jmikola/JmikolaJsAssetsHelperBundle/blob/master/Resources/doc/index.md

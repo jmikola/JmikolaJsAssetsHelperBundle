@@ -4,11 +4,11 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="jmikola_js_asset_package.controller.class">Jmikola\JsAssetPackageBundle\Controller\Controller</parameter>
+        <parameter key="jmikola_js_assets_helper.controller.class">Jmikola\JsAssetsHelperBundle\Controller\Controller</parameter>
     </parameters>
 
     <services>
-        <service id="jmikola_js_asset_package.controller" class="%jmikola_js_asset_package.controller.class%">
+        <service id="jmikola_js_assets_helper.controller" class="%jmikola_js_assets_helper.controller.class%">
             <argument type="service" id="templating" />
             <argument type="collection" /> <!-- default package -->
             <argument type="collection" /> <!-- named packages -->

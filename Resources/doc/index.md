@@ -1,4 +1,4 @@
-# JmikolaJsAssetPackageBundle
+# JmikolaJsAssetsHelperBundle
 
 This bundle exposes the Symfony2 asset helper to JavaScript, which allows
 relative or absolute asset URI's to be generated client-side.
@@ -7,10 +7,10 @@ relative or absolute asset URI's to be generated client-side.
 
 ### Submodule Creation
 
-Add JmikolaJsAssetPackageBundle to your `vendor/` directory:
+Add JmikolaJsAssetsHelperBundle to your `vendor/` directory:
 
 ``` bash
-$ git submodule add https://github.com/jmikola/JmikolaJsAssetPackageBundle.git vendor/bundles/Jmikola/JsAssetPackageBundle
+$ git submodule add https://github.com/jmikola/JmikolaJsAssetsHelperBundle.git vendor/bundles/Jmikola/JsAssetsHelperBundle
 ```
 
 ### Class Autoloading
@@ -27,7 +27,7 @@ $loader->registerNamespaces(array(
 
 ### Application Kernel
 
-Add JmikolaJsAssetPackageBundle to the `registerBundles()` method of your
+Add JmikolaJsAssetsHelperBundle to the `registerBundles()` method of your
 application kernel.
 
 ``` php
@@ -36,7 +36,7 @@ application kernel.
 public function registerBundles()
 {
     return array(
-        new Jmikola\JsAssetPackageBundle\JmikolaJsAssetPackageBundle(),
+        new Jmikola\JsAssetsHelperBundle\JmikolaJsAssetsHelperBundle(),
     );
 }
 ```
@@ -49,7 +49,7 @@ package defined in the `templating' block of the FrameworkBundle configuration.
 Named packages you wish to expose must be explicitly listed:
 
 ```yml
-jmikola_js_asset_package:
+jmikola_js_assets_helper:
     packages_to_expose: [ cloudfront, s3 ]
 ```
 
@@ -57,7 +57,7 @@ While an array of package names is the normal format, the configuration will
 also accept a scalar to expose a single package:
 
 ```yml
-jmikola_js_asset_package:
+jmikola_js_assets_helper:
     packages_to_expose: cloudfront
 ```
 
@@ -87,8 +87,8 @@ The bundle defines one route to a dynamically generated JavaScript file. Ensure
 this route is including in your application's routing configuration: 
 
 ```yml
-jmikola_js_asset_package:
-    resource: "@JmikolaJsAssetPackageBundle/Resources/config/routing/routing.xml"
+jmikola_js_assets_helper:
+    resource: "@JmikolaJsAssetsHelperBundle/Resources/config/routing/routing.xml"
 ```
 
 ### Assets
@@ -102,27 +102,27 @@ $ php app/console assets:install --symlink web
 Include the static assets and dynamic JavaScript in your applications template:
 
 ```jinja
-<script src="{{ asset('bundles/jmikolajsassetpackage/js/phpjs.namespaced.min.js') }}"></script>
-<script src="{{ asset('bundles/jmikolajsassetpackage/js/asset_helper.js') }}"></script>
-<script src="{{ path('jmikola_js_asset_package_js') }}"></script>
+<script src="{{ asset('bundles/jmikolajsAssetsHelper/js/phpjs.namespaced.min.js') }}"></script>
+<script src="{{ asset('bundles/jmikolajsAssetsHelper/js/assets_helper.js') }}"></script>
+<script src="{{ path('jmikola_js_assets_helper_js') }}"></script>
 ```
 
 If you are using [Assetic][], you may prefer to pack the static assets first:
 
 ```jinja
 {% javascripts
-    '@JmikolaJsAssetPackageBundle/Resources/public/js/phpjs.namespaced.min.js'
-    '@JmikolaJsAssetPackageBundle/Resources/public/js/asset_helper.js'
-    filter="?yui_js" output="js/jmikolajsassetpackage.min.js" %}
+    '@JmikolaJsAssetsHelperBundle/Resources/public/js/phpjs.namespaced.min.js'
+    '@JmikolaJsAssetsHelperBundle/Resources/public/js/assets_helper.js'
+    filter="?yui_js" output="js/jmikolajsAssetsHelper.min.js" %}
     <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
-<script src="{{ path('jmikola_js_asset_package_js') }}"></script>
+<script src="{{ path('jmikola_js_assets_helper_js') }}"></script>
 ```
 
 ## Usage
 
-Once configured, the bundle creates a single `AssetHelper` global in JavaScript.
+Once configured, the bundle creates a single `AssetsHelper` global in JavaScript.
 This is modeled after the PHP class from Symfony2's Templating component and
 has the following methods:
 
@@ -161,11 +161,11 @@ Typically, you will want to use the `getUrl()` method to generate asset paths.
 Keep in mind that if you refer to a named package that has not been exposed, an
 `InvalidPackageError` will be thrown.
 
-The following equivalent snippets demonstrate how `AssetHelper.getUrl()`
+The following equivalent snippets demonstrate how `AssetsHelper.getUrl()`
 compares to Symfony2's asset helper for Twig: 
 
 ```js
-'<img src="' + AssetHelper.getUrl('/images/logo.png') + '">';
+'<img src="' + AssetsHelper.getUrl('/images/logo.png') + '">';
 ```
 
 ```jinja

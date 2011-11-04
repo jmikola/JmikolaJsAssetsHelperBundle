@@ -1,8 +1,8 @@
 <?php
 
-namespace Jmikola\JsAssetPackageBundle\DependencyInjection\Compiler;
+namespace Jmikola\JsAssetsHelperBundle\DependencyInjection\Compiler;
 
-use Jmikola\JsAssetPackageBundle\Exception\InvalidArgumentException;
+use Jmikola\JsAssetsHelperBundle\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\DefinitionDecorator;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
