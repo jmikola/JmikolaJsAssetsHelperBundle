@@ -120,9 +120,6 @@ If you are using [Assetic][], you may prefer to pack the static assets first:
 <script src="{{ path('jmikola_js_asset_package_js') }}"></script>
 ```
 
-**Note**: This bundle depends on [jQuery][], which is not included. If you don't
-already have it, you may find it convenient to reference [Google's CDN][].
-
 ## Usage
 
 Once configured, the bundle creates a single `AssetHelper` global in JavaScript.
@@ -175,13 +172,6 @@ compares to Symfony2's asset helper for Twig:
 <img src="{{ asset('/images/logo.png') }}">
 ```
 
-Additional documentation may be found by reading through the documentation
-blocks within `asset_helper.js`. In addition to the `AssetHelper` class, you'll
-find JavaScript counterparts for the `PathPackage` and `UrlPackage` classes from
-Symfony2.
-
   [FrameworkBundle docs]: http://symfony.com/doc/current/reference/configuration/framework.html#templating
   [Assetic]: https://github.com/kriswallsmith/assetic
-  [jQuery]: http://jquery.com/
-  [Google's CDN]: http://code.google.com/apis/libraries/devguide.html#jquery
   [Symfony2 API]: http://api.symfony.com/2.0/
