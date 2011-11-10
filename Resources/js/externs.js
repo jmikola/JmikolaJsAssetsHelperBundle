@@ -20,3 +20,10 @@ var PHP_JS = function(){};
  * @return {string}
  */
 PHP_JS.prototype.md5 = function(str){};
+
+/**
+ * @param {string} format
+ * @param {...string|number} var_args
+ * @return {string}
+ */
+PHP_JS.prototype.sprintf = function(format, var_args){};

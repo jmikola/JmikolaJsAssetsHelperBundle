@@ -1,7 +1,6 @@
 goog.provide('jmikola.AssetsHelper');
 
 goog.require('goog.array');
-goog.require('goog.string.format');
 
 /**
  * @constructor
@@ -106,7 +105,8 @@ jmikola.AssetsHelper.Package.prototype.applyVersion = function(path) {
         return path;
     }
 
-    var versionized = goog.string.format(this.format_, path.replace(/^\/+/, ''), this.version_);
+    var $P = new PHP_JS();
+    var versionized = $P.sprintf(this.format_, path.replace(/^\/+/, ''), this.version_);
 
     if (path && '/' === path.charAt(0)) {
         versionized = '/' + versionized;
