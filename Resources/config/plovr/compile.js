@@ -14,7 +14,7 @@
     "name-suffixes-to-strip": ["logger", "logger_"],
 
     "output-file": "@JmikolaJsAssetsHelperBundle/Resources/public/js/assets_helper.js",
-    "output-wrapper": "/**\n * Portions of this code are from the Google Closure Library,\n * received from the Closure Authors under the Apache 2.0 license.\n *\n * All other code is (C) 2011 Jeremy Mikola and subject to the MIT license.\n */\n(function() {%output%})();",
+    "output-wrapper": "/**\n * Portions of this code are from the Google Closure Library,\n * received from the Closure Authors under the Apache 2.0 license.\n *\n * All other code is taken from php.js or is (C) 2011 Jeremy Mikola and subject to the MIT license.\n */\n(function() {%output%})();",
 
     "pretty-print": false,
     "debug": false
