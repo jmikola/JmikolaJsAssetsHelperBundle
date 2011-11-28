@@ -3,6 +3,8 @@ goog.provide('jmikola.AssetsHelper.PathPackage');
 goog.provide('jmikola.AssetsHelper.UrlPackage');
 
 goog.require('goog.array');
+goog.require('PHP_JS.sprintf');
+goog.require('PHP_JS.md5');
 
 /**
  * The basic package will add a version to asset URLs.
@@ -27,8 +29,7 @@ jmikola.AssetsHelper.Package.prototype.applyVersion = function(path) {
         return path;
     }
 
-    var $P = new PHP_JS();
-    var versionized = $P.sprintf(this.format_, path.replace(/^\/+/, ''), this.version_);
+    var versionized = PHP_JS.sprintf(this.format_, path.replace(/^\/+/, ''), this.version_);
 
     if (path && '/' === path.charAt(0)) {
         versionized = '/' + versionized;
@@ -152,7 +153,6 @@ jmikola.AssetsHelper.UrlPackage.prototype.getBaseUrl_ = function(path) {
        case 1:
            return this.baseUrls_[0];
        default:
-           var $P = new PHP_JS();
-           return this.baseUrls_[parseInt($P.md5(path).substring(0, 10), 16) % this.baseUrls_.length];
+           return this.baseUrls_[parseInt(PHP_JS.md5(path).substring(0, 10), 16) % this.baseUrls_.length];
    }
 };
