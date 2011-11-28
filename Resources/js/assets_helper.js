@@ -49,7 +49,7 @@ jmikola.AssetsHelper.prototype.init = function(basePath, defaultPackageConfig, n
  * @return {jmikola.AssetsHelper.Package} An asset package
  * @throws {jmikola.AssetsHelper.InvalidPackageError} If there is no package by that name
  */
-jmikola.AssetsHelper.prototype.getPackage = function(opt_name) {
+jmikola.AssetsHelper.prototype.getPackage_ = function(opt_name) {
     if (undefined === opt_name || null === opt_name) {
         return this.defaultPackage_;
     }
@@ -72,7 +72,7 @@ jmikola.AssetsHelper.prototype.getPackage = function(opt_name) {
  * @return {string} A public path which takes into account the base path and URL path
  */
 jmikola.AssetsHelper.prototype.getUrl = function(path, opt_packageName) {
-    return this.getPackage(opt_packageName).getUrl(path);
+    return this.getPackage_(opt_packageName).getUrl(path);
 };
 
 /**
@@ -82,7 +82,7 @@ jmikola.AssetsHelper.prototype.getUrl = function(path, opt_packageName) {
  * @return {string} The current version
  */
 jmikola.AssetsHelper.prototype.getVersion = function(opt_packageName) {
-   return this.getPackage(opt_packageName).getVersion();
+   return this.getPackage_(opt_packageName).getVersion();
 };
 
 

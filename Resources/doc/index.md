@@ -84,7 +84,7 @@ the [FrameworkBundle docs][].
 ### Routing
 
 The bundle defines one route to a dynamically generated JavaScript file. Ensure
-this route is including in your application's routing configuration: 
+this route is including in your application's routing configuration:
 
 ```yml
 jmikola_js_assets_helper:
@@ -128,23 +128,14 @@ has the following methods:
 
 ```js
 /**
- * Returns an asset package.
- *
- * @param string name The name of the package or null for the default package
- * @return Package An asset package
- * @throws InvalidPackageError If there is no package by that name
- */
-function getPackage(name);
-
-/**
  * Returns the public path.
  *
  * Absolute paths (i.e. http://...) are returned unmodified.
  *
  * @param string path        A public path
  * @param string packageName The name of the asset package to use
- *
  * @return string A public path which takes into account the base path and URL path
+ * @throws InvalidPackageError If there is no package by that name
  */
 function getUrl(path, packageName);
 
@@ -153,6 +144,7 @@ function getUrl(path, packageName);
  *
  * @param string packageName A package name
  * @return string The current version
+ * @throws InvalidPackageError If there is no package by that name
  */
 function getVersion(packageName);
 ```
@@ -162,7 +154,7 @@ Keep in mind that if you refer to a named package that has not been exposed, an
 `InvalidPackageError` will be thrown.
 
 The following equivalent snippets demonstrate how `AssetsHelper.getUrl()`
-compares to Symfony2's asset helper for Twig: 
+compares to Symfony2's asset helper for Twig:
 
 ```js
 '<img src="' + AssetsHelper.getUrl('/images/logo.png') + '">';

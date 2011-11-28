@@ -13,6 +13,5 @@ goog.exportProperty(jmikola.AssetsHelper, 'getInstance', jmikola.AssetsHelper.ge
 goog.exportProperty(jmikola.AssetsHelper.prototype, 'init', jmikola.AssetsHelper.prototype.init);
 goog.exportProperty(jmikola.AssetsHelper.prototype, 'getUrl', jmikola.AssetsHelper.prototype.getUrl);
 goog.exportProperty(jmikola.AssetsHelper.prototype, 'getVersion', jmikola.AssetsHelper.prototype.getVersion);
-goog.exportProperty(jmikola.AssetsHelper.prototype, 'getPackage', jmikola.AssetsHelper.prototype.getPackage);
 
 window['AssetsHelper'] = jmikola.AssetsHelper.getInstance();
