@@ -1,4 +1,5 @@
-goog.provide('jmikola.AssetsHelper');
+goog.provide('jmikola.AssetsHelper.Helper');
+goog.provide('jmikola.AssetsHelper.InvalidPackageError');
 
 goog.require('jmikola.AssetsHelper.Package');
 goog.require('jmikola.AssetsHelper.PathPackage');
@@ -8,12 +9,12 @@ goog.require('goog.array');
 /**
  * @constructor
  */
-jmikola.AssetsHelper = function() {
+jmikola.AssetsHelper.Helper = function() {
     this.basePath_ = '/';
     this.defaultPackage_ = null;
     this.namedPackages_ = [];
 };
-goog.addSingletonGetter(jmikola.AssetsHelper);
+goog.addSingletonGetter(jmikola.AssetsHelper.Helper);
 
 /**
  * Create an appropriate package instance from a config object.
@@ -21,7 +22,7 @@ goog.addSingletonGetter(jmikola.AssetsHelper);
  * @param {Object} config
  * @return {jmikola.AssetsHelper.Package}
  */
-jmikola.AssetsHelper.prototype.createPackage_ = function(config) {
+jmikola.AssetsHelper.Helper.prototype.createPackage_ = function(config) {
     if (config.hasOwnProperty('baseUrls')) {
         return new jmikola.AssetsHelper.UrlPackage(config.baseUrls, config.version, config.format);
     }
@@ -36,10 +37,10 @@ jmikola.AssetsHelper.prototype.createPackage_ = function(config) {
  * @param {Object} defaultPackageConfig   Default package configuration
  * @param {Array} namedPackageConfigs    Named package configurations by name
  */
-jmikola.AssetsHelper.prototype.init = function(basePath, defaultPackageConfig, namedPackageConfigs) {
+jmikola.AssetsHelper.Helper.prototype.init = function(basePath, defaultPackageConfig, namedPackageConfigs) {
     this.basePath_ = basePath;
     this.defaultPackage_ = this.createPackage_(defaultPackageConfig);
-    this.namedPackages_ = goog.array.map(namedPackageConfigs, function(v) { return jmikola.AssetsHelper.prototype.createPackage_(v);});
+    this.namedPackages_ = goog.array.map(namedPackageConfigs, function(v) { return jmikola.AssetsHelper.Helper.prototype.createPackage_(v);});
 };
 
 /**
@@ -49,7 +50,7 @@ jmikola.AssetsHelper.prototype.init = function(basePath, defaultPackageConfig, n
  * @return {jmikola.AssetsHelper.Package} An asset package
  * @throws {jmikola.AssetsHelper.InvalidPackageError} If there is no package by that name
  */
-jmikola.AssetsHelper.prototype.getPackage_ = function(opt_name) {
+jmikola.AssetsHelper.Helper.prototype.getPackage_ = function(opt_name) {
     if (undefined === opt_name || null === opt_name) {
         return this.defaultPackage_;
     }
@@ -71,7 +72,7 @@ jmikola.AssetsHelper.prototype.getPackage_ = function(opt_name) {
  *
  * @return {string} A public path which takes into account the base path and URL path
  */
-jmikola.AssetsHelper.prototype.getUrl = function(path, opt_packageName) {
+jmikola.AssetsHelper.Helper.prototype.getUrl = function(path, opt_packageName) {
     return this.getPackage_(opt_packageName).getUrl(path);
 };
 
@@ -81,7 +82,7 @@ jmikola.AssetsHelper.prototype.getUrl = function(path, opt_packageName) {
  * @param {string=} opt_packageName A package name
  * @return {string} The current version
  */
-jmikola.AssetsHelper.prototype.getVersion = function(opt_packageName) {
+jmikola.AssetsHelper.Helper.prototype.getVersion = function(opt_packageName) {
    return this.getPackage_(opt_packageName).getVersion();
 };
 

@@ -125,16 +125,16 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-goog.provide('PHP_JS.sprinf');
+goog.provide('PHP_JS.sprintf');
 
 /**
  * Returns a formatted string
  *
- * @param {string} format
- * @param {...string|number} var_args
+ * @param {string} opt_format
+ * @param {...string|number} opt_var_args
  * @return {string}
  */
-PHP_JS.sprintf = function () {
+PHP_JS.sprintf = function (opt_format, opt_var_args) {
     // Return a formatted string
     //
     // version: 1109.2015
@@ -167,12 +167,21 @@ PHP_JS.sprintf = function () {
         return leftJustify ? str + padding : padding + str;
     };
 
-    // justify()
-    var justify = function (value, prefix, leftJustify, minWidth, zeroPad, customPadChar) {
+    /**
+     * justify()
+     *
+     * @param {string} value
+     * @param {string} prefix
+     * @param {boolean} leftJustify
+     * @param {number} minWidth
+     * @param {boolean} zeroPad
+     * @param {string=} opt_customPadChar
+     */
+    var justify = function (value, prefix, leftJustify, minWidth, zeroPad, opt_customPadChar) {
         var diff = minWidth - value.length;
         if (diff > 0) {
             if (leftJustify || !zeroPad) {
-                value = pad(value, minWidth, customPadChar, leftJustify);
+                value = pad(value, minWidth, opt_customPadChar, leftJustify);
             } else {
                 value = value.slice(0, prefix.length) + pad('', diff, '0', true) + value.slice(prefix.length);
             }
@@ -193,12 +202,21 @@ PHP_JS.sprintf = function () {
         return justify(value, prefix, leftJustify, minWidth, zeroPad);
     };
 
-    // formatString()
-    var formatString = function (value, leftJustify, minWidth, precision, zeroPad, customPadChar) {
+    /**
+     * formatString()
+     *
+     * @param {string} value
+     * @param {boolean} leftJustify
+     * @param {number} minWidth
+     * @param {number|undefined} precision
+     * @param {boolean} zeroPad
+     * @param {string=} opt_customPadChar
+     */
+    var formatString = function (value, leftJustify, minWidth, precision, zeroPad, opt_customPadChar) {
         if (precision != null) {
             value = value.slice(0, precision);
         }
-        return justify(value, '', leftJustify, minWidth, zeroPad, customPadChar);
+        return justify(value, '', leftJustify, minWidth, zeroPad, opt_customPadChar);
     };
 
     // doFormat()

@@ -6,12 +6,12 @@
  *    php app/console plovr:build @JmikolaJsAssetsHelperBundle/compile.js
  */
 
-goog.require('jmikola.AssetsHelper');
+goog.require('jmikola.AssetsHelper.Helper');
 
-goog.exportSymbol('jmikola.AssetsHelper', jmikola.AssetsHelper);
-goog.exportProperty(jmikola.AssetsHelper, 'getInstance', jmikola.AssetsHelper.getInstance);
-goog.exportProperty(jmikola.AssetsHelper.prototype, 'init', jmikola.AssetsHelper.prototype.init);
-goog.exportProperty(jmikola.AssetsHelper.prototype, 'getUrl', jmikola.AssetsHelper.prototype.getUrl);
-goog.exportProperty(jmikola.AssetsHelper.prototype, 'getVersion', jmikola.AssetsHelper.prototype.getVersion);
+goog.exportSymbol('jmikola.AssetsHelper.Helper', jmikola.AssetsHelper.Helper);
+goog.exportProperty(jmikola.AssetsHelper.Helper, 'getInstance', jmikola.AssetsHelper.Helper.getInstance);
+goog.exportProperty(jmikola.AssetsHelper.Helper.prototype, 'init', jmikola.AssetsHelper.Helper.prototype.init);
+goog.exportProperty(jmikola.AssetsHelper.Helper.prototype, 'getUrl', jmikola.AssetsHelper.Helper.prototype.getUrl);
+goog.exportProperty(jmikola.AssetsHelper.Helper.prototype, 'getVersion', jmikola.AssetsHelper.Helper.prototype.getVersion);
 
-window['AssetsHelper'] = jmikola.AssetsHelper.getInstance();
+window['AssetsHelper'] = jmikola.AssetsHelper.Helper.getInstance();
