@@ -123,10 +123,12 @@ The following equivalent snippets demonstrate how `AssetsHelper.getUrl()`
 compares to Symfony2's asset helper for Twig: 
 
 ```js
+// JavaScript
 '<img src="' + AssetsHelper.getUrl('/images/logo.png') + '">';
 ```
 
 ```jinja
+{# Twig #}
 <img src="{{ asset('/images/logo.png') }}">
 ```
 
