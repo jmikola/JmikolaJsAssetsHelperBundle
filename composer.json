@@ -1,0 +1,19 @@
+{
+    "name": "jmikola/js-assets-helper-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony JsAssetsHelperBundle",
+    "keywords": ["Assets", "AssetsHelper", "JavaScript", "JS"],
+    "homepage": "https://github.com/jmikola/JmikolaJsAssetsHelperBundle",
+    "authors": [
+        { "name": "Jeremy Mikola", "email": "jmikola@gmail.com" },
+        { "name": "Christophe Coevoet", "email": "stof@notk.org" }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.0.5"
+    },
+    "autoload": {
+        "psr-0": { "Jmikola\\JsAssetsHelperBundle": "" }
+    },
+    "target-dir": "Jmikola/JsAssetsHelperBundle"
+}
