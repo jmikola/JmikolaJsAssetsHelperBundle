@@ -4,6 +4,7 @@
     "description": "Symfony JsAssetsHelperBundle",
     "keywords": ["Assets", "AssetsHelper", "JavaScript", "JS"],
     "homepage": "https://github.com/jmikola/JmikolaJsAssetsHelperBundle",
+    "license": "MIT",
     "authors": [
         { "name": "Jeremy Mikola", "email": "jmikola@gmail.com" },
         { "name": "Christophe Coevoet", "email": "stof@notk.org" }
