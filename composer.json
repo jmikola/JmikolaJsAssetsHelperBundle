@@ -1,8 +1,8 @@
 {
     "name": "jmikola/js-assets-helper-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony JsAssetsHelperBundle",
-    "keywords": ["Assets", "AssetsHelper", "JavaScript", "JS"],
+    "description": "Exposes the AssetsHelper service from Symfony2's templating component to JavaScript, allowing relative or absolute asset URI's to be generated client-side.",
+    "keywords": ["assets", "AssetsHelper", "JavaScript", "JS"],
     "homepage": "https://github.com/jmikola/JmikolaJsAssetsHelperBundle",
     "license": "MIT",
     "authors": [
@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.3.2",
-        "symfony/framework-bundle": ">=2.0.5"
+        "symfony/symfony": ">=2.0.5"
     },
     "autoload": {
         "psr-0": { "Jmikola\\JsAssetsHelperBundle": "" }
