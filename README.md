@@ -95,21 +95,12 @@ has the following methods:
 
 ```js
 /**
- * Returns an asset package.
- *
- * @param string name The name of the package or null for the default package
- * @return Package An asset package
- * @throws InvalidPackageError If there is no package by that name
- */
-function getPackage(name);
-
-/**
  * Returns the public path.
  *
  * Absolute paths (i.e. http://...) are returned unmodified.
  *
  * @param string path        A public path
- * @param string packageName The name of the asset package to use
+ * @param string packageName A package name (optional)
  *
  * @return string A public path which takes into account the base path and URL path
  */
@@ -118,7 +109,7 @@ function getUrl(path, packageName);
 /**
  * Gets the version to add to public URL.
  *
- * @param string packageName A package name
+ * @param string packageName A package name (optional)
  * @return string The current version
  */
 function getVersion(packageName);
