@@ -2,10 +2,8 @@
 
 namespace Jmikola\JsAssetsHelperBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class Controller
 {
