@@ -60,30 +60,17 @@ jmikola_js_assets_helper:
 
 ### Assets
 
-The bundle's static assets must be published to your `web/` directory:
+The bundle includes a compiled JavaScript asset, which must be published to your
+`web/` directory:
 
 ```bash
 $ php app/console assets:install --symlink web
 ```
 
-Include the static assets and dynamic JavaScript in your applications template:
+Include the compiled and dynamic JavaScript in your applications template:
 
 ```jinja
-<script src="{{ asset('bundles/jmikolajsassetshelper/js/phpjs.namespaced.min.js') }}"></script>
 <script src="{{ asset('bundles/jmikolajsassetshelper/js/assets_helper.js') }}"></script>
-<script src="{{ path('jmikola_js_assets_helper_js') }}"></script>
-```
-
-If you are using [Assetic][], you may prefer to pack the static assets first:
-
-```jinja
-{% javascripts
-    '@JmikolaJsAssetsHelperBundle/Resources/public/js/phpjs.namespaced.min.js'
-    '@JmikolaJsAssetsHelperBundle/Resources/public/js/assets_helper.js'
-    filter="?yui_js" output="js/jmikolajsAssetsHelper.min.js" %}
-    <script src="{{ asset_url }}"></script>
-{% endjavascripts %}
-
 <script src="{{ path('jmikola_js_assets_helper_js') }}"></script>
 ```
 
@@ -132,6 +119,18 @@ compares to Symfony2's asset helper for Twig:
 <img src="{{ asset('/images/logo.png') }}">
 ```
 
+## Development
+
+Note: This bundle includes a static JavaScript asset, which is pre-compiled with
+Google's [Closure Compiler][]. Any changes to the static JavaScript will require
+that you recompile to update the asset. For your convenience, you may wany to
+install [JMSGoogleClosureBundle][] and use the following command:
+
+```bash
+$ php app/console plovr:build @JmikolaJsAssetsHelperBundle/compile.js
+```
+
   [PR #2502]: https://github.com/symfony/symfony/pull/2502
   [FrameworkBundle docs]: http://symfony.com/doc/current/reference/configuration/framework.html#templating
-  [Assetic]: https://github.com/kriswallsmith/assetic
+  [Closure Compiler]: http://code.google.com/closure/compiler/
+  [JMSGoogleClosureBundle]: https://github.com/schmittjoh/JMSGoogleClosureBundle
