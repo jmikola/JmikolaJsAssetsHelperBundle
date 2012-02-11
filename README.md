@@ -11,7 +11,7 @@ This bundle depends [PR #2502][], which is included in Symfony 2.0.5 and higher.
 ## Configuration
 
 If you do not configure the bundle explicitly, it will only expose the default
-package defined in the `templating' block of the FrameworkBundle configuration.
+package defined in the `templating` block of the FrameworkBundle configuration.
 
 Named packages you wish to expose must be explicitly listed:
 
