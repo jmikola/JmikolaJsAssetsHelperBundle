@@ -123,8 +123,8 @@ compares to Symfony2's asset helper for Twig:
 
 Note: This bundle includes a static JavaScript asset, which is pre-compiled with
 Google's [Closure Compiler][]. Any changes to the static JavaScript will require
-that you recompile to update the asset. For your convenience, you may wany to
-install [JMSGoogleClosureBundle][] and use the following command:
+that you recompile the asset. For your convenience, you may want to install
+[JMSGoogleClosureBundle][] and use the following command:
 
 ```bash
 $ php app/console plovr:build @JmikolaJsAssetsHelperBundle/compile.js
