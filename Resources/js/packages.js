@@ -15,7 +15,7 @@ goog.require('PHP_JS.md5');
  */
 jmikola.AssetsHelper.Package = function(version, opt_format) {
     this.version_ = version;
-    this.format_ = opt_format + '' || '%s?%s';
+    this.format_ = (opt_format || '%s?%s') + '';
 };
 
 /**
@@ -132,7 +132,7 @@ goog.inherits(jmikola.AssetsHelper.UrlPackage, jmikola.AssetsHelper.Package);
  * @return {string} The public path
  */
 jmikola.AssetsHelper.UrlPackage.prototype.getUrl = function(path) {
-    var url = jmikola.AssetsHelper.PathPackage.superClass_.getUrl.call(this, path);
+    var url = jmikola.AssetsHelper.UrlPackage.superClass_.getUrl.call(this, path);
 
     if (url && '/' !== url.charAt(0)) {
         url = '/' + url;
