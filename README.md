@@ -51,7 +51,7 @@ the [FrameworkBundle docs][].
 ### Routing
 
 The bundle defines one route to a dynamically generated JavaScript file. Ensure
-this route is including in your application's routing configuration: 
+this route is including in your application's routing configuration:
 
 ```yml
 jmikola_js_assets_helper:
